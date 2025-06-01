@@ -1,120 +1,97 @@
-Financial Manage
-Visão Geral
-Financial Manage é uma aplicação web desenvolvida para ajudar os usuários a gerenciar suas finanças pessoais de forma simples e intuitiva. O projeto permite que os usuários visualizem seu saldo, registrem transações (depósitos, saques e transferências) e acompanhem o histórico de movimentações financeiras. A aplicação foi construída utilizando Next.js com TypeScript, e segue boas práticas de desenvolvimento, como modularidade, componentização e tipagem estrita.
-Este projeto foi desenvolvido como parte de um estudo prático para a FIAP Tech Challenge - Fase 1, com foco em criar uma interface amigável para gerenciamento financeiro.
-Funcionalidades Principais
+Financial Manage 💰
 
-Visualização de Saldo: Exibe o saldo atual da conta com opção de ocultar/exibir o valor.
-Registro de Transações: Permite adicionar, editar e excluir transações (depósitos, saques e transferências).
-Listagem de Transações: Mostra as últimas transações na página de dashboard com barra de rolagem vertical e histórico completo na página de transações.
-Responsividade: Interface adaptável para dispositivos móveis e desktops.
-Storybook: Documentação interativa dos componentes da aplicação.
+Financial Manage é uma aplicação web para gerenciamento financeiro pessoal, permitindo que os usuários acompanhem transações, visualizem saldos e gerenciem suas finanças de forma simples e intuitiva. Construída com Next.js, React e TypeScript, a aplicação utiliza o App Router do Next.js para uma navegação eficiente e uma experiência de usuário moderna.
+📋 Visão Geral
+Esta aplicação foi desenvolvida como parte do Tech Challenge da FIAP (Fase 1). Ela inclui funcionalidades como:
 
-Tecnologias Utilizadas
+Visualização do saldo atual 🏦
+Registro de novas transações (depósitos, saques, transferências) 📝
+Listagem e gerenciamento de transações (adicionar, editar, excluir) 📊
+Interface responsiva e acessível 🌐
 
-Next.js 14.2.3: Framework React para construção da aplicação.
-React 18: Biblioteca para construção de interfaces.
-TypeScript: Tipagem estrita para maior segurança e manutenibilidade.
-Tailwind CSS: Framework CSS para estilização rápida e responsiva.
-Zod: Biblioteca para validação de formulários.
-React Hook Form: Gerenciamento de formulários.
-Phosphor Icons: Ícones para a interface.
-Storybook: Ferramenta para documentação e testes visuais dos componentes.
-UUID: Geração de identificadores únicos para transações.
-
-Estrutura do Projeto
-Diretórios Principais
-
-src/components/: Contém os componentes reutilizáveis da aplicação.
-auth/: Componentes relacionados a autenticação (como LoginForm), que podem ser reintroduzidos no futuro.
-context/: Contextos globais, como AccountContext para gerenciamento de estado.
-dashboard/: Componentes específicos da página de dashboard (BalanceCard, TransactionList, NewTransactionForm).
-transactions/: Componentes específicos da página de transações (TransactionModal, DeleteConfirmationModal).
-ui/: Componentes genéricos de UI (TopBar, Input, Button, Modal).
-
-src/app/: Contém as páginas da aplicação.
-dashboard/: Página principal para visualização de saldo e últimas transações.
-transactions/: Página para listagem e gerenciamento completo de transações.
-login/: Página de login (atualmente sem funcionalidade de autenticação ativa).
-
-.storybook/: Configurações e histórias do Storybook para documentação dos componentes.
-public/: Arquivos estáticos, como imagens (logo-pc.png, default-user.png, login-bg.jpg).
-
-Arquivos Principais
-
-src/lib/models/: Contém os modelos de dados (Account.ts, Transaction.ts).
-package.json: Dependências e scripts do projeto.
-.env.local: Variáveis de ambiente (atualmente não utilizadas, mas podem ser usadas para configurações futuras).
-
+🚀 Começando
+Siga as instruções abaixo para configurar e executar o projeto localmente.
 Pré-requisitos
-Antes de iniciar, certifique-se de ter as seguintes ferramentas instaladas:
+Antes de começar, certifique-se de ter as seguintes ferramentas instaladas:
 
-Node.js (versão 18 ou superior)
-npm ou yarn (para gerenciamento de pacotes)
+Node.js (versão 18 ou superior) ⚙️
+npm (geralmente instalado com o Node.js) 📦
+Git (para clonar o repositório) 🌍
 
 Instalação
-Siga os passos abaixo para configurar e rodar o projeto localmente:
 
-Clone o Repositório:
-git clone <https://github.com/Silvio-Hub/Gerenciamento-Financeiro-TC1-FIAP->
+Clone o repositório:
+git clone https://github.com/Silvio-Hub/Gerenciamento-Financeiro-TC1-FIAP-.git
 cd financial-manage
 
-Instale as Dependências:
+Instale as dependências:
 npm install
 
-Configure as Variáveis de Ambiente (Opcional)\*\*:
-
-Crie um arquivo .env.local na raiz do projeto.
-Adicione variáveis de ambiente, se necessário (ex.: para autenticação ou APIs externas). Atualmente, o projeto não requer variáveis de ambiente.
-
-Inicie o Servidor de Desenvolvimento:
+Execute a aplicação em modo de desenvolvimento:
 npm run dev
 
 A aplicação estará disponível em http://localhost:3000.
 
-(Opcional) Inicie o Storybook:Para visualizar a documentação interativa dos componentes:
-npm run storybook
+Scripts Disponíveis
+No diretório do projeto, você pode executar os seguintes scripts:
 
-O Storybook estará disponível em http://localhost:6006.
+npm run dev:Inicia o servidor de desenvolvimento do Next.js em http://localhost:3000.
 
-Uso
-Páginas Disponíveis
+npm run build:Gera a build de produção da aplicação.
 
-Dashboard (/dashboard): Exibe o saldo atual, as últimas transações e um formulário para adicionar novas transações.
-O saldo pode ser ocultado/exibido ao clicar no ícone de olho.
-A lista de últimas transações tem uma barra de rolagem vertical para navegação.
-Use o formulário para adicionar transações (depósitos, saques ou transferências).
+npm run start:Inicia a aplicação em modo de produção após a build.
 
-Transações (/transactions): Lista todas as transações realizadas, com opções para adicionar, editar e excluir.
-Clique no botão "Adicionar Transação" para abrir o modal de adição.
-Use os ícones de lápis e lixeira para editar ou excluir transações.
+npm run lint:Executa o ESLint para verificar problemas de linting no código.
 
-Login (/login): Página de login, atualmente sem funcionalidade de autenticação ativa. Pode ser reintroduzida no futuro.
+npm run storybook:Inicia o Storybook para visualizar os componentes em http://localhost:6006.
 
-Componentes Principais
-Os componentes estão documentados no Storybook (npm run storybook):
+npm run build-storybook:Gera uma build estática do Storybook.
 
-TopBar: Barra superior com logotipo, nome do usuário e links de navegação.
-BalanceCard: Exibe o saldo atual com opção de ocultar/exibir.
-TransactionList: Lista as últimas transações com barra de rolagem vertical.
-NewTransactionForm: Formulário para adicionar novas transações.
-TransactionModal: Modal para adicionar ou editar transações.
-DeleteConfirmationModal: Modal para confirmar a exclusão de transações.
-Input, Button, Modal: Componentes genéricos de UI.
+🛠️ Tecnologias Utilizadas
 
-Desenvolvimento
-Adicionar Novos Componentes
+Next.js: Framework React para aplicações web modernas (versão 15.3.2).
+React: Biblioteca para construção de interfaces de usuário (versão 19.0.0).
+TypeScript: Superset de JavaScript para tipagem estática (versão 5).
+Storybook: Ferramenta para desenvolvimento e documentação de componentes (versão 9.0.3).
+Phosphor Icons: Ícones leves e personalizáveis para a interface.
+React Hook Form: Biblioteca para gerenciamento de formulários.
+Tailwind CSS: Framework CSS utilitário para estilização.
 
-Crie o componente em src/components/, organizando-o em uma subpasta apropriada (ex.: src/components/ui/ para componentes genéricos).
-Crie um arquivo .stories.tsx correspondente para documentar o componente no Storybook.
-Importe e use o componente nas páginas ou outros componentes.
+📂 Estrutura do Projeto
+financial-manage/
+├── src/
+│ ├── app/ # Páginas do Next.js (App Router)
+│ │ ├── dashboard/ # Página do dashboard
+│ │ └── transactions/ # Página de transações
+│ ├── components/ # Componentes reutilizáveis
+│ │ ├── context/ # Contextos (ex.: AccountContext)
+│ │ ├── transactions/ # Componentes específicos de transações
+│ │ └── ui/ # Componentes de UI genéricos (ex.: TopBar, Input)
+│ ├── lib/ # Utilitários e modelos
+│ │ ├── models/ # Modelos de dados (ex.: Transaction)
+│ │ └── utils/ # Funções utilitárias (ex.: dateUtils)
+│ └── styles/ # Estilos globais e módulos CSS
+├── .storybook/ # Configurações do Storybook
+├── public/ # Arquivos estáticos (ex.: imagens)
+├── package.json # Dependências e scripts do projeto
+├── tsconfig.json # Configurações do TypeScript
+└── README.md # Documentação do projeto
 
-Estilização
+🤝 Contribuição
+Contribuições são bem-vindas! Siga os passos abaixo para contribuir:
 
-O projeto usa Tailwind CSS para estilização. Adicione classes do Tailwind diretamente nos componentes.
-Para estilos personalizados, crie arquivos .module.css (ex.: Login.module.css).
+Faça um fork do repositório.
+Crie uma branch para sua feature (git checkout -b feature/nova-feature).
+Commit suas alterações (git commit -m 'Adiciona nova feature').
+Envie para o repositório remoto (git push origin feature/nova-feature).
+Abra um Pull Request.
 
-Testes Visuais
+📜 Licença
+Este projeto está licenciado sob a licença MIT - veja o arquivo LICENSE para mais detalhes.
+📬 Contato
+Se você tiver dúvidas ou sugestões, entre em contato comigo:
 
-Use o Storybook (npm run storybook) para testar visualmente os componentes de forma isolada.
-Adicione novas histórias para cada variação relevante do componente.
+E-mail: seu-silviocelso.dev@gmail.com 📧
+GitHub: Silvio-Hub 🌟
+
+⭐ Obrigado por usar o Financial Manage! ⭐
