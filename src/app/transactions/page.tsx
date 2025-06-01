@@ -11,7 +11,7 @@ import {
   formatDateToInput,
 } from "@/lib/utils/dateUtils";
 import styles from "./TransactionPage.module.css";
-import { TopBar } from "@/components/ui/ToBar";
+import { TopBar } from "@/components/ui/TopBar";
 import { TransactionModal } from "./TransactionModal";
 import { DeleteConfirmationModal } from "./DeleteConfirmationModal";
 

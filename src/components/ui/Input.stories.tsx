@@ -1,52 +1,31 @@
-"use client";
-
 import { Input } from "./Input";
-import type { Meta, StoryObj } from "@storybook/react";
-import { Envelope, Calendar } from "@phosphor-icons/react";
 
-const meta: Meta<typeof Input> = {
-  title: "UI/Input",
+// eslint-disable-next-line import/no-anonymous-default-export
+export default {
+  title: "Components/UI/Input",
   component: Input,
-  parameters: {
-    layout: "centered",
-  },
-  tags: ["autodocs"],
 };
 
-export default meta;
-
-type Story = StoryObj<typeof Input>;
-
-export const Default: Story = {
-  args: {
-    label: "Endereço de e-mail",
-    type: "email",
-    placeholder: "Digite o seu e-mail",
-  },
+export const Default = {
+  render: () => (
+    <Input label="Exemplo" type="text" placeholder="Digite algo..." />
+  ),
 };
 
-export const WithIcon: Story = {
-  args: {
-    label: "Endereço de e-mail",
-    type: "email",
-    placeholder: "Digite o seu e-mail",
-    icon: <Envelope size={20} />,
-  },
+export const WithIcon = {
+  render: () => (
+    <Input
+      label="Exemplo com Ícone"
+      type="text"
+      placeholder="Digite algo..."
+      icon={<span>🔍</span>}
+      iconInteractive={true}
+    />
+  ),
 };
 
-export const WithError: Story = {
-  args: {
-    label: "Endereço de e-mail",
-    type: "email",
-    placeholder: "Digite o seu e-mail",
-    //   error: { message: 'E-mail inválido' },
-  },
-};
-
-export const DateInput: Story = {
-  args: {
-    label: "Data",
-    type: "date",
-    icon: <Calendar size={20} />,
-  },
+export const WithError = {
+  render: () => (
+    <Input label="Exemplo com Erro" type="text" placeholder="Digite algo..." />
+  ),
 };

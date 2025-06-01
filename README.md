@@ -56,7 +56,7 @@ Instalação
 Siga os passos abaixo para configurar e rodar o projeto localmente:
 
 Clone o Repositório:
-git clone <URL_DO_REPOSITORIO>
+git clone <https://github.com/Silvio-Hub/Gerenciamento-Financeiro-TC1-FIAP->
 cd financial-manage
 
 Instale as Dependências:
@@ -118,23 +118,3 @@ Testes Visuais
 
 Use o Storybook (npm run storybook) para testar visualmente os componentes de forma isolada.
 Adicione novas histórias para cada variação relevante do componente.
-
-Problemas Conhecidos
-
-Autenticação: A funcionalidade de autenticação foi removida temporariamente devido a problemas com o NextAuth.js (erros 404 em /api/auth/session). Pode ser reintroduzida no futuro com uma abordagem alternativa (ex.: Auth.js v5).
-Persistência de Dados: Atualmente, as transações são armazenadas em memória (via AccountContext). Para persistência real, é necessário integrar um backend (ex.: API REST ou banco de dados).
-
-Contribuição
-
-Faça um fork do repositório.
-Crie uma branch para sua feature (git checkout -b feature/nova-funcionalidade).
-Commit suas alterações (git commit -m 'Adiciona nova funcionalidade').
-Envie para o repositório remoto (git push origin feature/nova-funcionalidade).
-Abra um Pull Request.
-
-Licença
-Este projeto é licenciado sob a MIT License.
-Contato
-Desenvolvido como parte da FIAP Tech Challenge - Fase 1. Para dúvidas ou sugestões, entre em contato com a equipe de desenvolvimento.
-
-Última Atualização: 26 de maio de 2025

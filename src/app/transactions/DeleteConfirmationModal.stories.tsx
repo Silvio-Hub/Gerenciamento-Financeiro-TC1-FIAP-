@@ -1,29 +1,19 @@
 import { DeleteConfirmationModal } from "./DeleteConfirmationModal";
-import type { Meta, StoryObj } from "@storybook/react";
-import { fn } from "@storybook/test";
+import { fn } from "storybook/test";
 
-const meta: Meta<typeof DeleteConfirmationModal> = {
-  title: "Transactions/DeleteConfirmationModal",
+// eslint-disable-next-line import/no-anonymous-default-export
+export default {
+  title: "Components/Transactions/DeleteConfirmationModal",
   component: DeleteConfirmationModal,
-  argTypes: {
-    onClose: { action: "closed" },
-    onConfirm: { action: "confirmed" },
-    transactionDescription: { control: "text" },
-  },
-  parameters: {
-    layout: "fullscreen",
-  },
 };
 
-export default meta;
-
-type Story = StoryObj<typeof DeleteConfirmationModal>;
-
-export const Default: Story = {
-  args: {
-    isOpen: true,
-    onClose: fn(),
-    onConfirm: fn(),
-    transactionDescription: "Salário",
-  },
+export const Default = {
+  render: () => (
+    <DeleteConfirmationModal
+      isOpen={true}
+      onClose={fn()}
+      onConfirm={fn()}
+      transactionDescription="Depósito Teste"
+    />
+  ),
 };

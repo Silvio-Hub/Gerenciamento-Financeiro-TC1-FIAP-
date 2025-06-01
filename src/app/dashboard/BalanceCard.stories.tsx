@@ -1,21 +1,27 @@
 import { BalanceCard } from "./BalanceCard";
-import type { Meta, StoryObj } from "@storybook/react";
-import { Account } from "@/lib/models/Account";
+import { fn } from "storybook/test";
 
-const meta: Meta<typeof BalanceCard> = {
-  title: "Dashboard/BalanceCard",
+// eslint-disable-next-line import/no-anonymous-default-export
+export default {
+  title: "Components/Dashboard/BalanceCard",
   component: BalanceCard,
-  parameters: {
-    layout: "centered",
+};
+
+const mockAccount = {
+  name: "John Doe",
+  accountNumber: "1234-5678",
+};
+
+export const PositiveBalance = {
+  render: () => <BalanceCard account={mockAccount} />,
+  args: {
+    onToggleBalanceVisibility: fn(),
   },
 };
 
-export default meta;
-
-type Story = StoryObj<typeof BalanceCard>;
-
-export const Default: Story = {
+export const NegativeBalance = {
+  render: () => <BalanceCard account={mockAccount} />,
   args: {
-    account: new Account("user-1", 1000),
+    onToggleBalanceVisibility: fn(),
   },
 };

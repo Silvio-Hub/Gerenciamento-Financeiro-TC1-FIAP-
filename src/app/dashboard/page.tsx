@@ -5,7 +5,7 @@ import { TransactionList } from "./TransactionList";
 import { NewTransactionForm } from "./NewTransactionForm";
 import { useAccount } from "@/components/context/AccountContext";
 import styles from "./DashboardPage.module.css";
-import { TopBar } from "@/components/ui/ToBar";
+import { TopBar } from "@/components/ui/TopBar";
 import { Footer } from "@/components/ui/Footer";
 
 export default function DashboardPage() {
