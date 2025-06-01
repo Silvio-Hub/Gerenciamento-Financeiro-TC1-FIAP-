@@ -71,7 +71,7 @@ Este projeto está licenciado sob a licença MIT - veja o arquivo LICENSE para m
 📬 Contato
 Se você tiver dúvidas ou sugestões, entre em contato comigo:
 
-E-mail: seu-silviocelso.dev@gmail.com 📧
+E-mail: silviocelso.dev@gmail.com 📧
 GitHub: Silvio-Hub 🌟
 
 ⭐ Obrigado por usar o Financial Manage! ⭐
