@@ -1,0 +1,86 @@
+.container {
+    background: linear-gradient(135deg, var(--primary-500), var(--background-paper));
+    border-radius: var(--border-radius-md);
+    box-shadow: var(--shadow-md);
+    padding: var(--spacing-md);
+  }
+
+  .title {
+    font-size: var(--font-size-h2);
+    font-weight: var(--font-weight-h2);
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .name {
+    font-size: var(--font-size-body);
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-xs);
+  }
+
+  .accountNumber {
+    font-size: var(--font-size-body);
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .balanceWrapper {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+  }
+
+  .balancePositive {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #10B981;
+  }
+
+  .balanceNegative {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--error-500);
+  }
+
+  .toggleButton {
+    color: var(--text-primary);
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: color 0.2s ease;
+  }
+
+  .toggleButton:hover {
+    color: var(--primary-600);
+  }
+
+  .toggleButton:focus-visible {
+    outline: 2px solid var(--primary-500);
+    outline-offset: 2px;
+  }
+
+  @media (max-width: 640px) {
+    .container {
+      padding: var(--spacing-sm);
+    }
+
+    .title {
+      font-size: var(--font-size-body);
+    }
+
+    .name,
+    .accountNumber {
+      font-size: var(--font-size-label);
+    }
+
+    .balancePositive,
+    .balanceNegative {
+      font-size: 1.25rem;
+    }
+  }
+
+  @media (min-width: 641px) {
+    .container {
+      padding: var(--spacing-lg);
+    }
+  }

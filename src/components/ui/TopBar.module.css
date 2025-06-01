@@ -1,0 +1,221 @@
+.header {
+    background-color: var(--background-default);
+    box-shadow: var(--shadow-md);
+    position: relative;
+  }
+
+  .container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .logoContainer {
+    display: flex;
+    align-items: center;
+  }
+
+  .logo {
+    object-fit: contain;
+  }
+
+  .sidebarLogo {
+    display: flex;
+    align-items: center;
+    margin-bottom: var(--spacing-md);
+  }
+
+  .userPhoto {
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--primary-500);
+  }
+
+  .welcome {
+    color: var(--primary-500);
+    font-size: var(--font-size-h2);
+  }
+
+  .welcomeText {
+    font-weight: var(--font-weight-h2);
+    font-size: var(--font-size-body);
+    color: #ffffff;
+  }
+
+  .hamburgerButton {
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: color 0.2s ease;
+  }
+
+  .hamburgerButton:hover {
+    color: var(--primary-500);
+  }
+
+  .hamburgerButton:focus-visible {
+    outline: 2px solid var(--primary-500);
+    outline-offset: 2px;
+  }
+
+  .notificationIcon {
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: color 0.2s ease;
+  }
+
+  .notificationIcon:hover {
+    color: var(--primary-500);
+  }
+
+  .notificationIcon:focus-visible {
+    outline: 2px solid var(--primary-500);
+    outline-offset: 2px;
+  }
+
+  .navLinks {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+  }
+
+  .navLinksCollapsed {
+    flex-direction: column;
+    gap: var(--spacing-md);
+    padding: var(--spacing-md) var(--spacing-lg);
+    padding-bottom: var(--spacing-lg);
+    background-color: var(--background-paper);
+    width: 250px;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 20;
+    border-right: 1px solid var(--gray-700);
+    align-items: flex-start;
+  }
+
+  .navItem {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: var(--spacing-sm);
+    color: var(--text-secondary);
+    transition: color 0.2s ease;
+    width: 100%;
+  }
+
+  .navItem:hover {
+    color: var(--primary-500);
+  }
+
+  .navItem:focus-visible {
+    outline: 2px solid var(--primary-500);
+    outline-offset: 2px;
+  }
+
+  .logoutItem {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: var(--spacing-sm);
+    color: var(--text-secondary);
+    transition: color 0.2s ease;
+    width: 100%;
+  }
+
+  .logoutItem:hover {
+    color: var(--primary-500);
+  }
+
+  .logoutItem:focus-visible {
+    outline: 2px solid var(--primary-500);
+    outline-offset: 2px;
+  }
+
+  @media (max-width: 640px) {
+    .container {
+      flex-direction: row;
+      align-items: center;
+      gap: var(--spacing-md);
+      justify-content: space-between;
+      padding-left: var(--spacing-lg);
+      padding-right: var(--spacing-lg);
+    }
+
+    .logoContainer {
+      display: none;
+    }
+
+    .navLinks {
+      display: none;
+    }
+
+    .navLinks.open {
+      display: flex !important;
+    }
+
+    .welcomeText {
+      font-size: var(--font-size-body);
+    }
+
+    .logoutItem {
+      margin-top: auto;
+    }
+  }
+
+  @media (min-width: 641px) {
+    .hamburgerButton {
+      display: none;
+    }
+
+    .notificationIcon {
+      display: none;
+    }
+
+    .sidebarLogo {
+      display: none;
+    }
+
+    .container {
+      flex-wrap: nowrap;
+      gap: var(--spacing-lg);
+      padding-left: var(--spacing-2xl);
+      padding-right: var(--spacing-2xl);
+    }
+
+    .navLinks {
+      display: flex;
+    }
+
+    .navLinksCollapsed {
+      display: none;
+    }
+
+    .navItem span:not(.transactionsText),
+    .logoutItem span {
+      display: none;
+    }
+
+    .logoutItem {
+      margin-top: 0;
+    }
+  }
+
+  @media (min-width: 641px) and (max-width: 767px) {
+    .container {
+      padding-left: var(--spacing-lg);
+      padding-right: var(--spacing-lg);
+    }
+
+    .navLinks {
+      gap: var(--spacing-sm);
+    }
+  }
+
+  @media (min-width: 768px) {
+    .container {
+      padding-left: var(--spacing-2xl);
+      padding-right: var(--spacing-2xl);
+    }
+  }

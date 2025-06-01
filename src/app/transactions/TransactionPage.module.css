@@ -1,0 +1,194 @@
+.container {
+  min-height: 100vh;
+  background-color: var(--background-default);
+  display: flex;
+  flex-direction: column;
+}
+
+.main {
+  padding: var(--spacing-lg);
+  flex: 1;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-lg);
+}
+
+.title {
+  font-size: 1.875rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.addButton {
+  padding: var(--spacing-sm) var(--spacing-md);
+  background-color: var(--primary-500);
+  color: var(--text-primary);
+  border-radius: var(--border-radius-md);
+  transition: background-color 0.2s ease;
+}
+
+.addButton:hover {
+  background-color: var(--primary-600);
+}
+
+.addButton:focus-visible {
+  outline: 2px solid var(--primary-500);
+  outline-offset: 2px;
+}
+
+.tableContainer {
+  background-color: var(--background-default);
+  border-radius: var(--border-radius-md);
+  box-shadow: var(--shadow-md);
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.tableHeader {
+  border-bottom: 1px solid var(--gray-700);
+}
+
+.tableHeaderCell {
+  padding: var(--spacing-md);
+  text-align: left;
+  font-size: var(--font-size-body);
+  font-weight: var(--font-weight-body);
+  color: var(--text-secondary);
+}
+
+.tableRow {
+  border-bottom: 1px solid var(--gray-700);
+}
+
+.tableCell {
+  padding: var(--spacing-md);
+  color: var(--text-secondary);
+  font-size: var(--font-size-body);
+  line-height: var(--line-height-body);
+  vertical-align: middle;
+}
+
+.amountDeposit {
+  color: #10b981;
+}
+
+.amountWithdrawal {
+  color: var(--error-500);
+}
+
+.actionButtons {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  padding: var(--spacing-md);
+}
+
+.editButton,
+.deleteButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  padding: var(--spacing-xs);
+  color: var(--gray-400);
+  background: none;
+  border: none;
+  border-radius: var(--border-radius-sm);
+  transition: color 0.2s ease, background-color 0.2s ease;
+  cursor: pointer;
+}
+
+.editButton:hover {
+  color: var(--primary-500);
+  background-color: var(--primary-100);
+}
+
+.editButton:focus-visible {
+  outline: 2px solid var(--primary-500);
+  outline-offset: 2px;
+}
+
+.deleteButton:hover {
+  color: var(--error-500);
+  background-color: var(--error-100);
+}
+
+.deleteButton:focus-visible {
+  outline: 2px solid var(--primary-500);
+  outline-offset: 2px;
+}
+
+.emptyMessage {
+  padding: var(--spacing-lg);
+  text-align: center;
+  color: var(--text-secondary);
+  font-size: var(--font-size-body);
+}
+
+.emptyMessage p {
+  margin: 0;
+}
+
+@media (max-width: 640px) {
+  .main {
+    padding: var(--spacing-md);
+  }
+
+  .title {
+    font-size: 1.5rem;
+  }
+
+  .tableHeaderCell,
+  .tableCell {
+    font-size: var(--font-size-label);
+    padding: var(--spacing-sm);
+  }
+
+  .actionButtons {
+    gap: var(--spacing-xs);
+    padding: var(--spacing-sm);
+  }
+
+  .editButton,
+  .deleteButton {
+    width: 28px;
+    height: 28px;
+    padding: var(--spacing-xs);
+  }
+
+  .emptyMessage {
+    padding: var(--spacing-md);
+    font-size: var(--font-size-label);
+  }
+}
+
+@media (min-width: 641px) and (max-width: 1023px) {
+  .main {
+    margin-left: var(--spacing-lg);
+    margin-right: var(--spacing-lg);
+  }
+
+  .title {
+    font-size: 2.25rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .main {
+    margin-left: var(--spacing-2xl);
+    margin-right: var(--spacing-2xl);
+  }
+
+  .title {
+    font-size: 2.25rem;
+  }
+}

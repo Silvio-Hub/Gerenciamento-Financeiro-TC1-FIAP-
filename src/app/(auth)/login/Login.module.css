@@ -1,0 +1,21 @@
+.logoContainer {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+.subtitle {
+  font-size: 1rem;
+  color: #9CA3AF;
+  margin-bottom: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .logoContainer {
+    margin-bottom: 1.5rem;
+  }
+
+  .subtitle {
+    margin-bottom: 2rem;
+  }
+}

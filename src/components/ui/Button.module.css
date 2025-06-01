@@ -1,0 +1,37 @@
+.button {
+    padding: 0.6rem 1rem;
+    border-radius: 0.5rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    width: 100%;
+    text-align: center;
+    transition: background-color 0.2s ease, opacity 0.2s ease;
+  }
+
+  .primary {
+    background-color: #6D28D9;
+    color: white;
+  }
+
+  .primary:hover:not(:disabled) {
+    background-color: #5B21B6;
+  }
+
+  .secondary {
+    background-color: #374151; 
+    color: #a1a1aa;
+  }
+
+  .secondary:hover:not(:disabled) {
+    background-color: #4B5563;
+  }
+
+  .disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  .button:focus-visible {
+    outline: 2px solid #6D28D9;
+    outline-offset: 2px;
+  }
