@@ -57,26 +57,6 @@ Phosphor Icons: Ícones leves e personalizáveis para a interface.
 React Hook Form: Biblioteca para gerenciamento de formulários.
 Tailwind CSS: Framework CSS utilitário para estilização.
 
-📂 Estrutura do Projeto
-financial-manage/
-├── src/
-│ ├── app/ # Páginas do Next.js (App Router)
-│ │ ├── dashboard/ # Página do dashboard
-│ │ └── transactions/ # Página de transações
-│ ├── components/ # Componentes reutilizáveis
-│ │ ├── context/ # Contextos (ex.: AccountContext)
-│ │ ├── transactions/ # Componentes específicos de transações
-│ │ └── ui/ # Componentes de UI genéricos (ex.: TopBar, Input)
-│ ├── lib/ # Utilitários e modelos
-│ │ ├── models/ # Modelos de dados (ex.: Transaction)
-│ │ └── utils/ # Funções utilitárias (ex.: dateUtils)
-│ └── styles/ # Estilos globais e módulos CSS
-├── .storybook/ # Configurações do Storybook
-├── public/ # Arquivos estáticos (ex.: imagens)
-├── package.json # Dependências e scripts do projeto
-├── tsconfig.json # Configurações do TypeScript
-└── README.md # Documentação do projeto
-
 🤝 Contribuição
 Contribuições são bem-vindas! Siga os passos abaixo para contribuir:
 
