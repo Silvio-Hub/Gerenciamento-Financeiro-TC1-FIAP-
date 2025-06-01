@@ -29,11 +29,12 @@ export function TransactionModal({
   initialData,
 }: TransactionModalProps) {
   const formatToBrazilian = (value: string | number): string => {
-    const cleanValue = String(value).replace(/[^\d]/g, "");
+    const num =
+      typeof value === "string"
+        ? parseFloat(parseBrazilianToNumber(value))
+        : value;
 
-    if (!cleanValue) return "";
-
-    const num = parseInt(cleanValue, 10) / 100;
+    if (isNaN(num)) return "";
 
     return num.toLocaleString("pt-BR", {
       minimumFractionDigits: 2,
@@ -80,7 +81,19 @@ export function TransactionModal({
 
   const handleAmountChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const rawValue = event.target.value.replace(/[^\d]/g, "");
-    const formattedValue = formatToBrazilian(rawValue);
+
+    if (!rawValue) {
+      setValue("amount", "", { shouldValidate: true });
+      return;
+    }
+
+    const num = parseFloat(rawValue) / 100;
+
+    const formattedValue = num.toLocaleString("pt-BR", {
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2,
+    });
+
     setValue("amount", formattedValue, { shouldValidate: true });
   };
 
@@ -131,7 +144,7 @@ export function TransactionModal({
             label="Valor"
             type="text"
             inputMode="decimal"
-            placeholder="Digite o valor (ex.: 1.234,56)"
+            placeholder="Digite o valor"
             icon={<CurrencyCircleDollar size={20} />}
             {...register("amount", {
               required: "O valor é obrigatório",

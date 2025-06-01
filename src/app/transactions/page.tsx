@@ -1,19 +1,19 @@
 "use client";
 
 import { useState } from "react";
+import { DeleteConfirmationModal } from "./DeleteConfirmationModal";
 import { Pencil, Trash } from "@phosphor-icons/react";
 import { useAccount } from "@/components/context/AccountContext";
 import { Transaction, TransactionType } from "@/lib/models/Transaction";
+import { TopBar } from "@/components/ui/TopBar";
 import { Footer } from "@/components/ui/Footer";
+import { TransactionModal } from "./TransactionModal";
 import {
   formatDateToLocal,
   createLocalDate,
   formatDateToInput,
 } from "@/lib/utils/dateUtils";
 import styles from "./TransactionPage.module.css";
-import { TopBar } from "@/components/ui/TopBar";
-import { TransactionModal } from "./TransactionModal";
-import { DeleteConfirmationModal } from "./DeleteConfirmationModal";
 
 interface TransactionFormInputs {
   type: TransactionType;
@@ -175,7 +175,10 @@ export default function TransactionsPage() {
           }
           initialData={{
             type: selectedTransaction.getType(),
-            amount: selectedTransaction.getAmount().toString(),
+            amount: selectedTransaction.getAmount().toLocaleString("pt-BR", {
+              minimumFractionDigits: 2,
+              maximumFractionDigits: 2,
+            }),
             description: selectedTransaction.getDescription(),
             date: formatDateToInput(selectedTransaction.getDate()),
           }}
